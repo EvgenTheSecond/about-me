@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+.summary p {
+    margin-bottom: 10px;
+}
+
+.summary p:last-child {
+    margin-bottom: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -34,9 +42,29 @@ header a {
     word-break: break-word;
 }
 
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left, .right {
+    width: 100%;
+}
+
 section {
     margin: 15px 0;
-    padding: 10px;
+    padding: 15px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -62,7 +90,7 @@ section h2 {
     font-size: 0.9em;
 }
 
-.job ul {
+.list ul {
     list-style-type: disc;
     margin-left: 20px;
 }
@@ -72,14 +100,20 @@ ul li {
     font-size: 0.9em;
 }
 
-/* Footer (if added) */
-footer {
-    text-align: center;
-    margin-top: 20px;
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .left {
+        width: 28%;
+    }
+    .right {
+        width: 68%;
+    }
 }
 
-/* Media Queries for larger screens */
-@media (min-width: 600px) {
+@media (min-width: 1024px) {
     body {
         padding: 20px;
     }
@@ -89,7 +123,7 @@ footer {
     }
 
     section {
-        padding: 15px;
+        padding: 20px;
     }
 
     section h2 {
@@ -102,39 +136,5 @@ footer {
 
     ul li {
         font-size: 1em;
-    }
-}
-
-@media (min-width: 1024px) {
-    body {
-        padding: 30px;
-    }
-
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header h1 {
-        font-size: 2.5em;
-    }
-
-    header p {
-        font-size: 1em;
-    }
-
-    section {
-        width: 75%;
-        margin: 15px auto;
-        padding: 20px;
-    }
-
-    section h2 {
-        font-size: 1.8em;
-    }
-
-    .job h3 {
-        font-size: 1.4em;
     }
 }
